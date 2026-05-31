@@ -81,34 +81,34 @@ body {
   animation: eq-dance var(--dur) ease-in-out infinite alternate;
 }
 
+.eq.is-stopped .eq-bar {
+  animation: none;
+  height: 6px;
+}
+
 .eq-bar:nth-child(1) {
   --dur: 0.4s;
   --bar-height: 60%;
-  animation-delay: 0s;
 }
 
 .eq-bar:nth-child(2) {
   --dur: 0.6s;
   --bar-height: 100%;
-  animation-delay: 0.1s;
 }
 
 .eq-bar:nth-child(3) {
   --dur: 0.5s;
   --bar-height: 40%;
-  animation-delay: 0.05s;
 }
 
 .eq-bar:nth-child(4) {
   --dur: 0.7s;
   --bar-height: 80%;
-  animation-delay: 0.15s;
 }
 
 .eq-bar:nth-child(5) {
   --dur: 0.45s;
   --bar-height: 55%;
-  animation-delay: 0.08s;
 }
 
 .disc {
@@ -203,7 +203,7 @@ body {
 
 @keyframes eq-dance {
   from {
-    height: max(6px, calc(var(--bar-height) * 0.15));
+    height: 6px;
   }
   to {
     height: var(--bar-height);
