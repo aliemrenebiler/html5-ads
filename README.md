@@ -2,6 +2,35 @@
 
 This project contains fixed-size HTML5 banner ads for three campaigns: Åhléns, Spotify, and Volvo. Each brand is organized the same way, with size-specific ads, shared styles, brand assets, a preview page, and a brand-local build script.
 
+Check out the live previews for each brand and ad size:
+
+<table>
+  <tr>
+    <th>Brand</th>
+    <th>160x600</th>
+    <th>250x250</th>
+    <th>728x90</th>
+  </tr>
+  <tr>
+    <td>Åhléns</td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/ahlens/160x600/index.html">Preview</a></td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/ahlens/250x250/index.html">Preview</a></td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/ahlens/728x90/index.html">Preview</a></td>
+  </tr>
+  <tr>
+    <td>Spotify</td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/spotify/160x600/index.html">Preview</a></td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/spotify/250x250/index.html">Preview</a></td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/spotify/728x90/index.html">Preview</a></td>
+  </tr>
+  <tr>
+    <td>Volvo</td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/volvo/160x600/index.html">Preview</a></td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/volvo/250x250/index.html">Preview</a></td>
+    <td><a href="https://aliemrenebiler.github.io/files/projects/html5-ads/volvo/728x90/index.html">Preview</a></td>
+  </tr>
+</table>
+
 ## Animations
 
 ### Åhléns
