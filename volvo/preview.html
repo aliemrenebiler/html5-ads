@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volvo Ads Preview</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      iframe {
+        display: block;
+        border: 0;
+      }
+
+      iframe.leaderboard {
+        width: 728px;
+        height: 90px;
+      }
+
+      iframe.square {
+        width: 250px;
+        height: 250px;
+      }
+
+      iframe.skyscraper {
+        width: 160px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      class="leaderboard"
+      src="728x90/index.html"
+      title="Volvo Ad - 728x90"
+    ></iframe>
+
+    <iframe
+      class="square"
+      src="250x250/index.html"
+      title="Volvo Ad - 250x250"
+    ></iframe>
+
+    <iframe
+      class="skyscraper"
+      src="160x600/index.html"
+      title="Volvo Ad - 160x600"
+    ></iframe>
+  </body>
+</html>

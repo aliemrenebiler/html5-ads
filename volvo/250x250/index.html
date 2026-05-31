@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Volvo Ad — 250x250</title>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <script src="../scripts/car-drive.js" defer></script>
+    <style>
+      body {
+        width: 250px;
+        height: 250px;
+      }
+
+      .ad {
+        --car-width: 200px;
+        --car-bottom: 60px;
+        --car-edge-buffer: 18px;
+        --car-stop-x: -100px;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 18px 0;
+      }
+
+      .message {
+        color: var(--volvo-text);
+        z-index: 2;
+        animation: slide-right 0.8s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .cta {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        margin: auto -18px 0;
+        width: calc(100% + 36px);
+        height: 38px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="ad"
+      onclick="
+        window.open('%%CLICK_URL_UNESC%%https://volvocars.com', '_blank')
+      "
+    >
+      <img class="volvo-logo" src="../assets/svg/volvo-logo.svg" alt="Volvo" />
+
+      <div class="message">
+        <div class="eyebrow">EX90 · Pure electric</div>
+        <div class="headline">Beautifully safe.</div>
+      </div>
+
+      <div class="car-stage">
+        <img
+          class="car-image"
+          src="../assets/png/volvo-car.png"
+          alt="Volvo EX90"
+        />
+      </div>
+
+      <button class="cta">Explore</button>
+    </div>
+  </body>
+</html>
