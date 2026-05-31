@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Ad — 728x90</title>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <script src="../scripts/disc-spin.js" defer></script>
+    <style>
+      body {
+        width: 728px;
+        height: 90px;
+      }
+
+      .ad {
+        width: 728px;
+        height: 90px;
+        background:
+          radial-gradient(circle at 72% 0%, rgba(29, 185, 84, 0.2), transparent 34%),
+          linear-gradient(135deg, var(--spotify-bg-green-dark) 0%, var(--spotify-black) 72%);
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        gap: 20px;
+      }
+
+      .logo {
+        gap: 8px;
+        flex-shrink: 0;
+        animation: fade-in 0.6s ease both;
+      }
+
+      .spotify-logo {
+        width: 118px;
+      }
+
+      .content {
+        flex: 1;
+        z-index: 1;
+        min-width: 0;
+        animation: slide-up 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--spotify-green);
+        margin-bottom: 3px;
+      }
+
+      .headline {
+        font-size: 19px;
+        white-space: nowrap;
+        letter-spacing: -0.3px;
+      }
+
+      .disc {
+        flex-shrink: 0;
+        align-self: flex-start;
+        margin-top: calc(var(--disc-size) / -2.5);
+        z-index: 1;
+        animation:
+          spin 4s linear infinite,
+          fade-in 0.8s 0.25s ease both;
+      }
+
+      .eq {
+        align-self: flex-end;
+        margin-right: -20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="ad"
+      onclick="window.open('%%CLICK_URL_UNESC%%https://spotify.com', '_blank')"
+    >
+      <div class="logo">
+        <img
+          class="spotify-logo"
+          src="../assets/svg/spotify-logo.svg"
+          alt="Spotify"
+        />
+      </div>
+
+      <div class="content">
+        <div class="eyebrow">Music for every moment</div>
+        <div class="headline">Listen without limits.</div>
+      </div>
+
+      <div class="eq">
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+      </div>
+
+      <div class="disc"></div>
+
+      <button class="cta">Listen now</button>
+    </div>
+  </body>
+</html>

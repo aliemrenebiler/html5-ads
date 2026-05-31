@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spotify Ad — 160x600</title>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <script src="../scripts/disc-spin.js" defer></script>
+    <style>
+      body {
+        width: 160px;
+        height: 600px;
+      }
+
+      .ad {
+        --disc-size: 200px;
+        --disc-hole-size: 56px;
+        width: 160px;
+        height: 600px;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(29, 185, 84, 0.22), transparent 30%),
+          linear-gradient(180deg, var(--spotify-bg-green-dark) 0%, var(--spotify-black) 64%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 16px 0;
+      }
+
+      .disc {
+        z-index: 1;
+        margin-top: -82px;
+        margin-bottom: 0;
+        animation:
+          spin 4s linear infinite,
+          fade-in 0.7s 0.1s ease both;
+      }
+
+      .message {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 1;
+        text-align: center;
+        animation: fade-in 0.8s 0.3s ease both;
+      }
+
+      .logo {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .spotify-logo {
+        width: 112px;
+      }
+
+      .copy {
+        width: 100%;
+      }
+
+      .headline {
+        font-size: 24px;
+        line-height: 1.05;
+        letter-spacing: -0.6px;
+        margin-bottom: 12px;
+      }
+
+      .subline {
+        color: var(--spotify-text-muted);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.45;
+      }
+
+      .cta {
+        width: 100%;
+      }
+
+      .eq {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+        animation: fade-in 0.8s 0.7s ease both;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="ad"
+      onclick="window.open('%%CLICK_URL_UNESC%%https://spotify.com', '_blank')"
+    >
+      <div class="disc"></div>
+
+      <div class="message">
+        <div class="logo">
+          <img
+            class="spotify-logo"
+            src="../assets/svg/spotify-logo.svg"
+            alt="Spotify"
+          />
+        </div>
+
+        <div class="copy">
+          <div class="headline">Music for every mood.</div>
+          <div class="subline">
+            Stream playlists, podcasts, and new releases wherever the day takes
+            you.
+          </div>
+        </div>
+      </div>
+
+      <button class="cta">Listen now</button>
+
+      <div class="eq">
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+      </div>
+    </div>
+  </body>
+</html>

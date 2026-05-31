@@ -1,0 +1,239 @@
+:root {
+  --spotify-green: #1db954;
+  --spotify-green-hover: #1ed760;
+  --spotify-green-dark: #158a3e;
+  --spotify-bg-green-dark: #062d18;
+  --spotify-black: #000;
+  --spotify-surface: #1a1a1a;
+  --spotify-surface-light: #282828;
+  --spotify-text: #fff;
+  --spotify-text-muted: rgba(255, 255, 255, 0.55);
+  --spotify-text-subtle: rgba(255, 255, 255, 0.4);
+  --spotify-font: "Gotham", "Gotham SSm", "Helvetica Neue", Arial, sans-serif;
+  --disc-size: 90px;
+  --disc-hole-size: 26px;
+  --eq-gap: 5px;
+  --eq-height: 46px;
+  --eq-bar-width: 6px;
+  --eq-bar-radius: 3px 3px 0 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: var(--spotify-font);
+}
+
+.ad {
+  background: var(--spotify-black);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--spotify-green);
+  opacity: var(--blob-opacity, 0.2);
+  filter: blur(var(--blob-blur, 45px));
+  animation: blob-drift var(--blob-duration, 8s) ease-in-out infinite
+    var(--blob-direction, normal);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.spotify-logo {
+  display: block;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.headline,
+.track-name {
+  color: var(--spotify-text);
+  font-weight: 900;
+}
+
+.eq {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--eq-gap);
+  height: var(--eq-height);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.eq-bar {
+  width: var(--eq-bar-width);
+  height: var(--bar-height);
+  background: var(--spotify-green);
+  border-radius: var(--eq-bar-radius);
+  animation: eq-dance var(--dur) ease-in-out infinite alternate;
+}
+
+.eq-bar:nth-child(1) {
+  --dur: 0.4s;
+  --bar-height: 60%;
+  animation-delay: 0s;
+}
+
+.eq-bar:nth-child(2) {
+  --dur: 0.6s;
+  --bar-height: 100%;
+  animation-delay: 0.1s;
+}
+
+.eq-bar:nth-child(3) {
+  --dur: 0.5s;
+  --bar-height: 40%;
+  animation-delay: 0.05s;
+}
+
+.eq-bar:nth-child(4) {
+  --dur: 0.7s;
+  --bar-height: 80%;
+  animation-delay: 0.15s;
+}
+
+.eq-bar:nth-child(5) {
+  --dur: 0.45s;
+  --bar-height: 55%;
+  animation-delay: 0.08s;
+}
+
+.disc {
+  width: var(--disc-size);
+  height: var(--disc-size);
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--spotify-green) 0deg,
+    var(--spotify-green-dark) 60deg,
+    var(--spotify-surface-light) 120deg,
+    var(--spotify-black) 180deg,
+    var(--spotify-surface) 240deg,
+    var(--spotify-green) 300deg,
+    var(--spotify-green) 360deg
+  );
+  box-shadow:
+    0 0 0 3px var(--spotify-surface),
+    0 0 0 4px var(--spotify-green),
+    0 8px 28px rgba(29, 185, 84, 0.35);
+  position: relative;
+  animation: spin 4s linear infinite;
+}
+
+.disc::after {
+  content: "";
+  position: absolute;
+  width: var(--disc-hole-size);
+  height: var(--disc-hole-size);
+  background: var(--spotify-black);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--spotify-green);
+}
+
+.cta {
+  flex-shrink: 0;
+  z-index: 1;
+  height: 36px;
+  padding: 0 20px;
+  white-space: nowrap;
+  background: var(--spotify-green);
+  color: var(--spotify-black);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition:
+    transform 0.15s,
+    background 0.15s;
+  animation: fade-in 0.8s 0.5s ease both;
+}
+
+.cta:hover {
+  background: var(--spotify-green-hover);
+  transform: scale(1.03);
+}
+
+.progress,
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--spotify-green);
+  animation: progress 15s linear infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10px, 8px) scale(1.08);
+  }
+}
+
+@keyframes eq-dance {
+  from {
+    height: max(6px, calc(var(--bar-height) * 0.15));
+  }
+  to {
+    height: var(--bar-height);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

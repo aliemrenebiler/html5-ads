@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spotify Ad — 250x250</title>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <script src="../scripts/disc-spin.js" defer></script>
+    <style>
+      body {
+        width: 250px;
+        height: 250px;
+      }
+
+      .ad {
+        --disc-size: 154px;
+        --disc-hole-size: 44px;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 20px 18px 18px;
+      }
+
+      .blob-1 {
+        width: 200px;
+        height: 200px;
+        top: -80px;
+        right: -60px;
+        --blob-opacity: 0.18;
+        --blob-duration: 8s;
+      }
+
+      .blob-2 {
+        width: 150px;
+        height: 150px;
+        bottom: -50px;
+        left: -40px;
+        --blob-opacity: 0.12;
+        --blob-duration: 10s;
+        --blob-direction: reverse;
+      }
+
+      .top-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 1;
+        animation: fade-in 0.5s ease both;
+      }
+
+      .logo {
+        gap: 6px;
+      }
+
+      .spotify-logo {
+        width: 92px;
+      }
+
+      .hero {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        animation: fade-in 0.7s 0.15s ease both;
+      }
+
+      .hero .headline {
+        width: 128px;
+        font-size: 30px;
+        text-align: left;
+        line-height: 0.96;
+        letter-spacing: -1px;
+        margin-bottom: 0;
+        z-index: 2;
+      }
+
+      .disc {
+        position: absolute;
+        top: -55px;
+        right: -64px;
+        z-index: 1;
+      }
+
+      .bottom {
+        width: 100%;
+        z-index: 1;
+        animation: slide-up 0.7s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .cta {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="ad"
+      onclick="window.open('%%CLICK_URL_UNESC%%https://spotify.com', '_blank')"
+    >
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+
+      <div class="top-row">
+        <div class="logo">
+          <img
+            class="spotify-logo"
+            src="../assets/svg/spotify-logo.svg"
+            alt="Spotify"
+          />
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="headline">Your music,<br />your way.</div>
+        <div class="disc"></div>
+      </div>
+
+      <div class="bottom">
+        <button class="cta">Listen now</button>
+      </div>
+    </div>
+  </body>
+</html>
