@@ -1,5 +1,6 @@
 :root {
   --ahlens-red: #ed1c24;
+  --ahlens-red-hover: #bf0e1b;
   --ahlens-bg-warm: #faf6f1;
   --ahlens-bg-cream: #fffaf6;
   --ahlens-border: #eadbd1;
@@ -16,6 +17,7 @@
 }
 
 body {
+  margin: 0;
   overflow: hidden;
   font-family: "Georgia", "Times New Roman", serif;
 }
@@ -127,7 +129,7 @@ body {
 }
 
 .cta:hover {
-  background: var(--ahlens-red);
+  background: var(--ahlens-red-hover);
 }
 
 @keyframes fade-in {
@@ -154,6 +156,17 @@ body {
   from {
     opacity: 0;
     transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
   }
   to {
     opacity: 1;

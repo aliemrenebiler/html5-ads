@@ -135,7 +135,21 @@ const driveCar = async (stage, car) => {
 document.querySelectorAll(".car-stage").forEach((stage) => {
   const car = stage.querySelector(".car-image");
 
-  if (car) {
-    driveCar(stage, car);
+  if (!car) {
+    return;
   }
+
+  if (!("IntersectionObserver" in window)) {
+    driveCar(stage, car);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      driveCar(stage, car);
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(stage);
 });

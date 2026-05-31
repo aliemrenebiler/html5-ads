@@ -37,6 +37,7 @@
       }
 
       .header::after {
+        content: "";
         background: repeating-linear-gradient(
           90deg,
           transparent,
@@ -91,7 +92,7 @@
       }
 
       /* Content bottom */
-      .content-bottom {
+      .content {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -136,11 +137,11 @@
         <span class="season-tag">Summer sale</span>
       </div>
 
-      <div class="content-bottom">
+      <div class="content">
         <div class="headline">Beautiful things, better prices.</div>
 
         <div class="offer-circle">
-          <span class="pct">–30%</span>
+          <span class="pct">-30%</span>
           <span class="off">off</span>
         </div>
       </div>
@@ -148,17 +149,18 @@
       <div class="showcase">
         <div class="product-card">
           <div class="product-label">Home & Living</div>
-          <div class="product-discount">Up to –40%</div>
+          <div class="product-discount">Up to -40%</div>
         </div>
         <div class="product-card">
           <div class="product-label">Women & Men</div>
-          <div class="product-discount">Up to –30%</div>
+          <div class="product-discount">Up to -30%</div>
         </div>
         <div class="product-card">
           <div class="product-label">Skin & Care</div>
-          <div class="product-discount">Up to –25%</div>
+          <div class="product-discount">Up to -25%</div>
         </div>
       </div>
+
       <button class="cta">Shop now</button>
     </div>
   </body>

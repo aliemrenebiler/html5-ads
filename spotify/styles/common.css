@@ -8,7 +8,7 @@
   --spotify-surface-light: #282828;
   --spotify-text: #fff;
   --spotify-text-muted: rgba(255, 255, 255, 0.55);
-  --spotify-font: "Gotham", "Gotham SSm", "Helvetica Neue", Arial, sans-serif;
+  --spotify-font: "Helvetica Neue", Arial, sans-serif;
   --disc-size: 90px;
   --disc-hole-size: 26px;
   --eq-gap: 5px;
@@ -24,6 +24,7 @@
 }
 
 body {
+  margin: 0;
   overflow: hidden;
   font-family: var(--spotify-font);
 }
@@ -217,4 +218,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
