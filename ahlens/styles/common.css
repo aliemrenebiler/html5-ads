@@ -1,0 +1,195 @@
+:root {
+  --ahlens-red: #ed1c24;
+  --ahlens-bg-warm: #faf6f1;
+  --ahlens-bg-cream: #fffaf6;
+  --ahlens-border: #eadbd1;
+  --ahlens-pattern-muted: rgba(237, 28, 36, 0.04);
+  --ahlens-foreground-brown: #1c1510;
+  --ahlens-text-muted: #8a7060;
+  --ahlens-offer-text: rgba(255, 255, 255, 0.88);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.ad {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--ahlens-border);
+}
+
+.ahlens-logo {
+  display: block;
+  height: auto;
+  animation: fade-in 0.6s ease both;
+}
+
+.logo-panel,
+.header {
+  background: var(--ahlens-bg-cream);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pattern,
+.logo-panel::before,
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.offer-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: var(--offer-size);
+  height: var(--offer-size);
+  border-radius: 50%;
+  background: var(--ahlens-red);
+  border: 1.5px solid var(--ahlens-red);
+  flex-shrink: 0;
+  animation:
+    badge-pop 0.5s 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    badge-pulse 3s 3s ease-in-out infinite;
+}
+
+.offer-circle .pct {
+  font-size: var(--offer-pct-size);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+
+.offer-circle .off {
+  font-family: "Arial", sans-serif;
+  font-size: var(--offer-off-size);
+  color: var(--ahlens-offer-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-info {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.product-card {
+  background: var(--ahlens-bg-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-label {
+  font-size: var(--product-label-size);
+  font-style: italic;
+  color: var(--ahlens-foreground-brown);
+  line-height: 1.2;
+}
+
+.product-discount {
+  font-family: "Arial", sans-serif;
+  font-size: var(--product-discount-size);
+  font-weight: 700;
+  color: var(--ahlens-red);
+}
+
+.headline {
+  font-size: var(--headline-size);
+  font-weight: 400;
+  color: var(--ahlens-foreground-brown);
+  font-style: italic;
+  line-height: var(--headline-line-height);
+}
+
+.cta {
+  background: var(--ahlens-red);
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: var(--ahlens-red);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes badge-pop {
+  from {
+    transform: scale(0) rotate(-15deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08) rotate(2deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.96) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes badge-pulse {
+  0%,
+  72%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  82% {
+    transform: scale(1.08) rotate(2deg);
+  }
+  92% {
+    transform: scale(0.96) rotate(0deg);
+  }
+}

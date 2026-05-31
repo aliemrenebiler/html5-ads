@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Åhlens Ad — 250x250</title>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <style>
+      body {
+        width: 250px;
+        height: 250px;
+      }
+
+      .ad {
+        --offer-size: 64px;
+        --offer-pct-size: 18px;
+        --offer-off-size: 9px;
+        --product-label-size: 9px;
+        --product-discount-size: 9px;
+        --headline-size: 16px;
+        --headline-line-height: 1.2;
+        width: 250px;
+        height: 250px;
+        background: var(--ahlens-bg-cream);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Main image area */
+      .image-area {
+        flex: 1;
+        background: var(--ahlens-bg-warm);
+        border-bottom: 1px solid var(--ahlens-border);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 15px;
+      }
+
+      /* Decorative background pattern */
+      .pattern {
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 18px,
+          var(--ahlens-pattern-muted) 18px,
+          var(--ahlens-pattern-muted) 19px
+        );
+      }
+
+      .ahlens-logo {
+        z-index: 2;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 86px;
+        animation: fade-in 0.5s ease both;
+      }
+
+      /* Offer bubble top-right */
+      .offer-circle {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+      }
+
+      /* Center product */
+      .product-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        z-index: 1;
+        animation: float-up 1s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .product-image-main {
+        width: 70px;
+        height: auto;
+        animation: gentle-float 4s ease-in-out infinite;
+      }
+
+      @keyframes gentle-float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .product-label {
+        font-family: "Arial", sans-serif;
+        font-size: var(--product-label-size);
+        font-style: normal;
+        color: var(--ahlens-text-muted);
+        letter-spacing: 0.12em;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+
+      /* Bottom panel */
+      .bottom {
+        padding: 12px 14px 14px;
+        background: var(--ahlens-bg-cream);
+        animation: slide-up 0.8s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .headline {
+        margin-bottom: 10px;
+      }
+
+      .bottom-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .sale-note {
+        font-family: "Arial", sans-serif;
+        font-size: 8px;
+        color: var(--ahlens-text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      .sale-note strong {
+        display: block;
+        font-size: 10px;
+        color: var(--ahlens-red);
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      .cta {
+        height: 30px;
+        padding: 0 14px;
+        letter-spacing: 0.14em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      @keyframes float-up {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="ad"
+      onclick="window.open('%%CLICK_URL_UNESC%%https://ahlens.se', '_blank')"
+    >
+      <div class="image-area">
+        <div class="pattern"></div>
+
+        <img class="ahlens-logo" src="../assets/svg/ahlens-logo.svg" alt="Åhléns" />
+
+        <div class="offer-circle">
+          <span class="pct">–30%</span>
+          <span class="off">off</span>
+        </div>
+
+        <div class="product-center">
+          <img
+            class="product-image-main"
+            src="../assets/svg/lotion-bottle.svg"
+            alt="Lotion bottle"
+          />
+          <span class="product-label">Beauty & Skincare</span>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="headline">Your summer glow<br />starts here.</div>
+        <div class="bottom-row">
+          <div class="sale-note">
+            <strong>Summer sale</strong>
+            This week only
+          </div>
+          <button class="cta">Shop now</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

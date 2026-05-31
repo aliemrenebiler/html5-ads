@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Åhlens Ad — 728x90</title>
+    <link rel="stylesheet" href="../styles/common.css" />
+    <style>
+      body {
+        width: 728px;
+        height: 90px;
+      }
+
+      .ad {
+        --offer-size: 64px;
+        --offer-pct-size: 18px;
+        --offer-off-size: 9px;
+        --product-label-size: 15px;
+        --product-discount-size: 12px;
+        --headline-size: 23px;
+        --headline-line-height: 1.1;
+        width: 728px;
+        height: 90px;
+        background: var(--ahlens-bg-warm);
+        display: flex;
+        align-items: stretch;
+      }
+
+      /* Logo panel */
+      .logo-panel {
+        width: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid var(--ahlens-border);
+      }
+
+      /* Subtle texture lines */
+      .logo-panel::before {
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 8px,
+          var(--ahlens-pattern-muted) 8px,
+          var(--ahlens-pattern-muted) 9px
+        );
+      }
+
+      .ahlens-logo {
+        width: 86px;
+        z-index: 1;
+      }
+
+      /* Center content */
+      .content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        gap: 18px;
+        animation: slide-right 0.8s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .text-block {
+        flex: 1;
+      }
+
+      .season {
+        font-family: "Arial", sans-serif;
+        font-size: 9px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ahlens-red);
+        margin-bottom: 3px;
+      }
+
+      .headline {
+        letter-spacing: -0.2px;
+      }
+
+      /* Products strip */
+      .products {
+        display: flex;
+        height: 100%;
+        flex-shrink: 0;
+        animation: fade-in 0.8s 0.3s ease both;
+      }
+
+      .product-card {
+        width: 110px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        border-inline: 1px solid var(--ahlens-border);
+      }
+
+      .product-card + .product-card {
+        border-left: none;
+      }
+
+      /* CTA area */
+      .cta-area {
+        display: flex;
+        align-items: center;
+        animation: fade-in 0.8s 0.4s ease both;
+      }
+
+      .cta {
+        height: 100%;
+        padding: 0 18px;
+        letter-spacing: 0.16em;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="ad"
+      onclick="window.open('%%CLICK_URL_UNESC%%https://ahlens.se', '_blank')"
+    >
+      <div class="logo-panel">
+        <img class="ahlens-logo" src="../assets/svg/ahlens-logo.svg" alt="Åhléns" />
+      </div>
+
+      <div class="content">
+        <div class="text-block">
+          <div class="season">Summer sale · Now on</div>
+          <div class="headline">Style for<br />every home.</div>
+        </div>
+        <div class="offer-circle">
+          <span class="pct">–30%</span>
+          <span class="off">off</span>
+        </div>
+      </div>
+
+      <div class="products">
+        <div class="product-card">
+          <div class="product-info">
+            <div class="product-label">Home<br />& Living</div>
+            <div class="product-discount">Up to –40%</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-info">
+            <div class="product-label">Women<br />& Men</div>
+            <div class="product-discount">Up to –30%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-area">
+        <button class="cta">Shop now</button>
+      </div>
+    </div>
+  </body>
+</html>
